@@ -29,6 +29,20 @@ export const characters = [
         attack: 230,
         defense: 150,
         hp: 275
-    }
+    },
+    {
+        id: 4,
+        name: 'Khrom the Magic Wizard',
+        attack: 230,
+        defense: 150,
+        hp: 275
+    },
+    {
+        id: 5,
+        name: 'Phocles the Dark Elf',
+        attack: 230,
+        defense: 150,
+        hp: 275
+    },
 ]
 

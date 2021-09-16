@@ -5,13 +5,14 @@ function App(props) {
   const [characters, setCharacter] = useState(props.characters)
 
   return (
-    <div className="grid justify-center h-screen items-center">
-      <header className="text-center text-5xl font-uncial">Select your Fighter</header>
-      <div className="grid grid-cols-2 gap-4 font-cardo text-xl">
+    <div className="grid justify-center h-screen items-center" id="base">
+      <header className="text-center text-white text-5xl font-uncial">Select your Character</header>
+      <svg className="animate-bounce w-12 h-12"></svg>
+      <div className="grid grid-cols-3 gap-4 font-cardo text-xl">
         {characters.map((character) => {
           return (
             <div key={character.id}>
-              <div className="flex flex-col text-center border-2 border-blue-400 p-2">
+              <div className="flex flex-col text-center bg-white border-2 border-blue-400 p-2">
                 <img alt="" />
                 <h2>{character.name}</h2>
                 <p>Attack: <span className="text-blue-600">{character.attack}</span></p>
