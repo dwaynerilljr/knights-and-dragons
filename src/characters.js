@@ -4,21 +4,31 @@ export const characters = [
         name: "Lyndys the Valiant Knight",
         attack: 100,
         defense: 100,
-        avatar: 'lyndys.svg'
+        hp: 110,
+        avatar: 'assets/images/lyndys.svg'
     },
     {
         id: 1,
         name: 'Hadena the Noble Archer',
         attack: 110,
         defense: 80,
-        avatar: 'images/hadena.svg'
+        avatar: 'assets/images/hadena.svg',
+        hp: 100
     },
     {
         id: 2,
-        name: 'Onixath the Dark Dragon',
+        name: 'Gol the Dark Dragon',
         attack: 200,
         defense: 100,
-        avatar: 'images/onixath.svg'
+        avatar: 'assets/images/onixath.svg',
+        hp: 250
+    },
+    {
+        id: 3,
+        name: 'Onixath the Light Dragon',
+        attack: 230,
+        defense: 150,
+        hp: 275
     }
 ]
 
