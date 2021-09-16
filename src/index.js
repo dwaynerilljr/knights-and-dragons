@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {characters} from './characters'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App characters={characters} />
   </React.StrictMode>,
   document.getElementById('root')
 );
