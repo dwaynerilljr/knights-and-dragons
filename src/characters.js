@@ -14,7 +14,7 @@ export const characters = [
         attack: 100,
         defense: 100,
         hp: 110,
-        avatar: lyndys
+        avatar: lyndys,
     },
     {
         id: 1,
@@ -23,7 +23,7 @@ export const characters = [
         attack: 110,
         defense: 80,
         avatar: hadena,
-        hp: 100
+        hp: 100,
     },
     {
         id: 2,
@@ -32,7 +32,7 @@ export const characters = [
         attack: 200,
         defense: 100,
         avatar: gol,
-        hp: 250
+        hp: 250,
     },
     {
         id: 3,
@@ -41,7 +41,7 @@ export const characters = [
         attack: 230,
         defense: 150,
         avatar: onixath,
-        hp: 275
+        hp: 275,
     },
     {
         id: 4,
@@ -50,7 +50,7 @@ export const characters = [
         attack: 230,
         defense: 150,
         avatar: khrom,
-        hp: 275
+        hp: 275,
     },
     {
         id: 5,
@@ -59,7 +59,7 @@ export const characters = [
         attack: 230,
         defense: 150,
         avatar: phocles,
-        hp: 275
+        hp: 275,
     },
 ]
 
