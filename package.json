@@ -39,6 +39,7 @@
   "devDependencies": {
     "autoprefixer": "^9",
     "postcss": "^7",
+    "tailwind-heropatterns": "^0.0.8",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }

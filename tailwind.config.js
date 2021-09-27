@@ -6,6 +6,10 @@ module.exports = {
       fontFamily: {
         'uncial':["'Uncial Antiqua', 'sans'"],
         'cardo':["'Cardo', 'sans'"]
+      },
+      colors: {
+        'dark-purple': '#2c1320',
+        'plum-web': '#f9b9f2'
       }
     },
   },

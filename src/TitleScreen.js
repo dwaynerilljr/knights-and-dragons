@@ -6,7 +6,7 @@
 const TitleScreen = ({renderSelect}) => {
     return (
         <>
-            <header className="text-center text-white text-5xl font-uncial">Welcome to Knights & Dragons!</header>
+            <header className="text-center text-white text-6xl font-uncial">Welcome to Knights & Dragons!</header>
             <div className="flex font-cardo text-xl justify-center my-10">
                 <p className="w-4/6 bg-white p-4 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas commodi beatae veritatis natus maiores eligendi. 
                 Doloremque provident quae nostrum, iste rerum excepturi sunt recusandae placeat ex! Deleniti voluptatum nihil assumenda. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum soluta molestias provident illo quibusdam minima, non culpa minus quaerat, 
@@ -15,7 +15,7 @@ const TitleScreen = ({renderSelect}) => {
                 consequuntur et!</p>
             </div>
             <div className="flex justify-center">
-                <button onClick={renderSelect} type="submit" className="bg-green-600 text-2xl flex justify-center hover:bg-green-800 p-2 font-uncial text-white w-1/6">Start Your Journey</button>
+                <button onClick={renderSelect} type="submit" className="text-2xl flex justify-center bg-plum-web p-2 font-uncial text-dark-purple">Start Your Journey</button>
             </div>
         </>
     )
