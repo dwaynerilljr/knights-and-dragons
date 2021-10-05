@@ -9,17 +9,54 @@ function App() {
   const [select, setSelect] = useState(false);
   const [title, setTitle] = useState(true);
   const [battle, setBattle] = useState(false);
-  const [mainChar, setMainChar] = useState({})
+  const [renderMain, setRenderMain] = useState(false);
+  const [mainChar, setMainChar] = useState({});
+  const [oppChar, setOppChar] = useState({});
+  const [characterIndex, setCharacterIndex] = useState(0);
+  const [renderOpp, setRenderOpp] = useState(false);
+
+    const opponentCharacter = characters[characterIndex]
+
+    const randomOpponent = () => {
+        setCharacterIndex(Math.floor(Math.random() * 6));
+        setRenderOpp(!renderOpp);
+    }
 
     const handleSubmit = (e) => {
-        alert(JSON.stringify(mainChar));
         e.preventDefault();
         setBattle(!battle)
         setTitle(title)
         setSelect(!select)
     }
 
-    const handleChange = e => {
+    const setOpponent = (e) => {
+      setRenderOpp(!renderOpp)
+      switch (e.target.value) {
+        case '0':
+            setOppChar(characters[0]);
+            break;
+        case '1':
+            setOppChar(characters[1]);
+            break;
+        case '2':
+            setOppChar(characters[2]);
+            break;
+        case '3':
+            setOppChar(characters[3]);
+            break;
+        case '4':
+            setOppChar(characters[4]);
+            break;
+        case '5':
+            setOppChar(characters[5]);
+            break;
+        default:
+            alert('please try again!');
+    }
+    }
+
+    const setUser = e => {
+        setRenderMain(!renderMain);
         switch (e.target.value) {
             case '0':
                 setMainChar(characters[0]);
@@ -71,13 +108,23 @@ function App() {
       {title ? (<TitleScreen renderSelect={renderSelect} />) : (null)}
       {select ? 
         (<CharacterSelect 
+          renderMain={renderMain}
           mainChar={mainChar}
-          handleChange={handleChange}
+          setUser={setUser}
+          renderOpp={renderOpp}
           handleSubmit={handleSubmit}
-          battleSelect={battleSelect} 
-          characters={characters}  
+          battleSelect={battleSelect}
+          oppChar={oppChar}
+          setOpponent={setOpponent} 
+          characters={characters}
+          randomOpponent={randomOpponent}
+          opponentCharacter={opponentCharacter}  
           returnToTitle={returnToTitle} />) : (null)}
-      {battle ? (<BattleGround characters={characters} mainChar={mainChar} returnToSelect={returnToSelect} />) : (null)}
+      {battle ? 
+        (<BattleGround
+          mainChar={mainChar}
+          oppChar={oppChar}
+          returnToSelect={returnToSelect} />) : (null)}
     </div>
   );
 }
