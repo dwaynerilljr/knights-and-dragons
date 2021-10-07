@@ -9,7 +9,15 @@ module.exports = {
       },
       colors: {
         'dark-purple': '#2c1320',
-        'plum-web': '#f9b9f2'
+        'plum-web': '#f9b9f2',
+        'royal-gold': '#ffd700'
+      },
+      height: {
+        'quarter': '25vh',
+        'half': '50vh'
+      },
+      width: {
+        'quarter': '25vw'
       }
     },
   },

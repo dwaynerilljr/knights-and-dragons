@@ -1,4 +1,4 @@
-const CharacterSelect = ({ characters, battleSelect, renderMain, renderOpp, mainChar, setUser, oppChar, setOpponent, handleSubmit, returnToTitle }) => {
+const CharacterSelect = ({ characters, renderMain, renderOpp, mainChar, setUser, oppChar, setOpponent, handleSubmit, returnToTitle }) => {
 
     return (
         <>
@@ -6,7 +6,6 @@ const CharacterSelect = ({ characters, battleSelect, renderMain, renderOpp, main
                 <div className="flex flex-col m-4">
                     <label htmlFor="userCharacter" className="text-white text-4xl text-center font-uncial mb-2">Select your Character</label>
                     <select name="userCharacter" id="userCharacter" onChange={setUser} className="w-full">
-                        <option value={null}></option>
                         <option value={characters[0].id}>{characters[0].name}</option>
                         <option value={characters[1].id}>{characters[1].name}</option>
                         <option value={characters[2].id}>{characters[2].name}</option>
@@ -31,7 +30,6 @@ const CharacterSelect = ({ characters, battleSelect, renderMain, renderOpp, main
                 <div className="flex flex-col m-4">
                     <label htmlFor="opponentCharacter" className="text-white text-4xl font-uncial mb-2">Select your Opponent</label>
                     <select name="opponentCharacter" id="opponentCharacter" onChange={setOpponent} className="w-full">
-                        <option value={null}></option>
                         <option value={characters[0].id}>{characters[0].name}</option>
                         <option value={characters[1].id}>{characters[1].name}</option>
                         <option value={characters[2].id}>{characters[2].name}</option>
@@ -51,8 +49,8 @@ const CharacterSelect = ({ characters, battleSelect, renderMain, renderOpp, main
                 </div>
             </div>
             <div className="flex my-10 gap-10 text-dark-purple font-uncial text-2xl">
-                <button className="bg-plum-web p-4 rounded-md" onClick={returnToTitle}>Return to Title Screen</button>
-                <button className="bg-plum-web p-4 rounded-md" onClick={handleSubmit}>Battle with this character</button>
+                <button className="bg-plum-web p-4 rounded-md hover:text-royal-gold hover:bg-dark-purple" onClick={returnToTitle}>Return to Title Screen</button>
+                <button className="bg-plum-web p-4 rounded-md hover:text-royal-gold hover:bg-dark-purple" onClick={handleSubmit}>Begin battle!</button>
             </div>
         </>
     )

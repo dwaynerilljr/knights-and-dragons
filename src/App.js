@@ -92,11 +92,11 @@ function App() {
     setSelect(!select)
   }
 
-  const battleSelect = () => {
-    setBattle(!battle)
-    setTitle(title)
-    setSelect(!select)
-  }
+  // const battleSelect = () => {
+  //   setBattle(!battle)
+  //   setTitle(title)
+  //   setSelect(!select)
+  // }
 
   const returnToSelect = () => {
     setSelect(!select)
@@ -113,7 +113,6 @@ function App() {
           setUser={setUser}
           renderOpp={renderOpp}
           handleSubmit={handleSubmit}
-          battleSelect={battleSelect}
           oppChar={oppChar}
           setOpponent={setOpponent} 
           characters={characters}
