@@ -30,7 +30,7 @@ function App() {
     }
 
     const setOpponent = (e) => {
-      setRenderOpp(!renderOpp)
+      setRenderOpp(true)
       switch (e.target.value) {
         case '0':
             setOppChar(characters[0]);
@@ -56,7 +56,7 @@ function App() {
     }
 
     const setUser = e => {
-        setRenderMain(!renderMain);
+        setRenderMain(true);
         switch (e.target.value) {
             case '0':
                 setMainChar(characters[0]);
