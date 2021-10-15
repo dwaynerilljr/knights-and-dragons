@@ -99,8 +99,10 @@ function App() {
   // }
 
   const returnToSelect = () => {
-    setSelect(!select)
-    setBattle(!battle)
+    setSelect(!select);
+    setBattle(!battle);
+    setRenderOpp(false);
+    setRenderMain(false);
   }
 
   return (
@@ -120,10 +122,11 @@ function App() {
           opponentCharacter={opponentCharacter}  
           returnToTitle={returnToTitle} />) : (null)}
       {battle ? 
-        (<BattleGround
+        <BattleGround
           mainChar={mainChar}
           oppChar={oppChar}
-          returnToSelect={returnToSelect} />) : (null)}
+          returnToSelect={returnToSelect}
+        /> : null}
     </div>
   );
 }

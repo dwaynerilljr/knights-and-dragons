@@ -23,7 +23,7 @@ export const characters = [
         attack: 190,
         defense: 170,
         avatar: hadena,
-        hp: 100,
+        hp: 180,
     },
     {
         id: 2,

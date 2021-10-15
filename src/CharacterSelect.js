@@ -1,5 +1,5 @@
 const CharacterSelect = ({ characters, renderMain, renderOpp, mainChar, setUser, oppChar, setOpponent, handleSubmit, returnToTitle }) => {
-
+    
     return (
         <>
             <div className="grid grid-cols-3 gap-4 font-cardo text-xl justify-items-end">
@@ -52,7 +52,7 @@ const CharacterSelect = ({ characters, renderMain, renderOpp, mainChar, setUser,
             </div>
             <div className="flex my-10 gap-10 text-dark-purple font-uncial text-2xl">
                 <button className="bg-plum-web p-4 rounded-md hover:text-royal-gold hover:bg-dark-purple" onClick={returnToTitle}>Return to Title Screen</button>
-                <button className="bg-plum-web p-4 rounded-md hover:text-royal-gold hover:bg-dark-purple" onClick={handleSubmit}>Begin battle!</button>
+                <button className="bg-plum-web p-4 rounded-md hover:text-royal-gold hover:bg-dark-purple" id="continueBtn" onClick={handleSubmit}>Begin battle!</button>
             </div>
         </>
     )
