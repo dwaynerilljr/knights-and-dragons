@@ -15,7 +15,7 @@ const TitleScreen = ({renderSelect}) => {
                 consequuntur et!</p>
             </div>
             <div className="flex justify-center">
-                <button onClick={renderSelect} type="submit" className="text-2xl flex justify-center bg-plum-web hover:text-royal-gold hover:bg-dark-purple p-2 font-uncial text-dark-purple rounded-md">Start Your Journey</button>
+                <button onClick={renderSelect} type="submit" className="text-2xl flex justify-center bg-wolf-grey hover:text-college-navy p-4 font-uncial text-white rounded-md">Start Your Journey</button>
             </div>
         </>
     )

@@ -62,13 +62,15 @@ const BattleGround = ({ mainChar, oppChar, returnToSelect }) => {
 
 
     const resetGame = () => {
-        setUserAlive(!userAlive);
+        setUserAlive(true);
         setUserHealth(newMain.hp);
         setOppHealth(newOpp.hp)
         setSpecialEligible(false)
     }
 
     const restartGame = () => {
+        setOppAlive(true);
+        setUserAlive(true);
         setUserHealth(newMain.hp);
         setOppHealth(newOpp.hp);
         setSpecialEligible(false)
@@ -81,35 +83,38 @@ const BattleGround = ({ mainChar, oppChar, returnToSelect }) => {
             <header className="text-center text-white text-6xl mb-4 font-uncial">Battle Arena</header>
             {oppAlive && userAlive ? 
                 <>
-                    <div className="grid grid-cols-2 gap-x-40 w-4/6">
-                        <div className="flex flex-col items-center bg-white border-2 border-blue-400 my-4 h-half w-1/2 justify-self-end">
+                    <div className="grid grid-cols-3 gap-x-10 text-xl">
+                        <div className="flex text-2xl flex-col items-center rounded-md bg-college-navy text-wolf-grey px-4 my-4 h-half w-full justify-self-end character">
                             <img src={mainChar.avatar} alt={mainChar.name} className="h-quarter my-2"/>
-                            <h2>{mainChar.name} the {mainChar.type}</h2>
-                            <p>Attack: <span className="text-blue-600"><strong>{mainChar.attack}</strong></span></p>
-                            <p>Defence: <span className="text-blue-600"><strong>{mainChar.defense}</strong></span></p>
-                            <p className="text-2xl">HP: <span className="text-blue-600"><strong>{userHealth}</strong></span></p>
+                            <h2 className="text-action-green"><strong>{mainChar.name} the {mainChar.type}</strong></h2>
+                            <p>Attack: <span className="text-action-green"><strong>{mainChar.attack}</strong></span></p>
+                            <p>Defence: <span className="text-action-green"><strong>{mainChar.defense}</strong></span></p>
+                            <p className="text-2xl">HP: <span className="text-action-green"><strong>{userHealth}</strong></span></p>
                             {displayBtn ?
-                                <button className="p-2 m-1 bg-plum-web rounded-md text-xl font-cardo hover:text-royal-gold hover:bg-dark-purple" id="btn" onClick={attackOpponent}>Attack</button>
+                                <button className="p-1 m-1 bg-wolf-grey text-white rounded-md text-lg font-uncial hover:text-college-navy" id="btn" onClick={attackOpponent}>Attack</button>
                                 : null
                             }
                             {specialEligible ? 
-                                <button className="p-2 m-1 bg-royal-gold rounded-md text-xl font-cardo hover:text-royal-gold hover:bg-dark-purple" onClick={specialAttack}>Special Attack</button>
+                                <button className="p-1 m-1 bg-action-green text-college-navy rounded-md text-xl font-uncial hover:text-white" onClick={specialAttack}>Special Attack</button>
                                 : null    
                             }
                         </div>
-                        <div className="flex flex-col items-center bg-white border-2 border-blue-400 my-4 h-half w-1/2">
+                        <div className="flex self-center items-center justify-self-center flex-col font-uncial w-4/6">
+                            <span className="flex text-5xl text-white" >Vs.</span>
+                            {/* <button className="bg-plum-web my-2 p-2 rounded-md" onClick={handleSubmit}>Choose Random Opponent</button> */}
+                        </div>
+                        <div className="flex flex-col text-2xl items-center rounded-md bg-college-navy text-wolf-grey w-full px-4 my-4 h-half character">
                             <img src={oppChar.avatar} alt={oppChar.name} className="h-quarter my-2" />
-                            <h2>{oppChar.name} the {oppChar.type}</h2>
-                            <p>Attack: <span className="text-blue-600"><strong>{oppChar.attack}</strong></span></p>
-                            <p>Defence: <span className="text-blue-600"><strong>{oppChar.defense}</strong></span></p>
-                            <p className="text-2xl">HP: <span className="text-blue-600"><strong>{oppHealth}</strong></span></p>
+                            <h2 className="text-action-green"><strong>{oppChar.name} the {oppChar.type}</strong></h2>
+                            <p>Attack: <span className="text-action-green"><strong>{oppChar.attack}</strong></span></p>
+                            <p>Defence: <span className="text-action-green"><strong>{oppChar.defense}</strong></span></p>
+                            <p className="text-2xl">HP: <span className="text-action-green"><strong>{oppHealth}</strong></span></p>
                             {attacking ?
-                                <h1 className="text-red-500 text-lg text-center"><strong>{oppChar.name} the {oppChar.type} is attacking!</strong></h1>
+                                <h1 className="text-red-500 text-lg text-center"><strong>{oppChar.name} is attacking!</strong></h1>
                                 : null
                             }
                         </div> 
-                    </div>
-                    <button className="bg-plum-web p-4 m-4 rounded-md hover:text-royal-gold hover:bg-dark-purple font-uncial text-2xl" onClick={restartGame} >Restart Battle</button>   
+                    </div>  
                 </>
             : null
          }
@@ -117,10 +122,13 @@ const BattleGround = ({ mainChar, oppChar, returnToSelect }) => {
          {!userAlive && oppAlive ? 
             <div className="flex flex-col items-center p-10 h-quarter bg-white text-5xl font-cardo">
                 <p>Oh no, you lost! :(</p>
-                <button className="bg-plum-web p-4 m-4 rounded-md hover:text-royal-gold hover:bg-dark-purple font-uncial text-2xl" onClick={resetGame}>Try again?</button>
+                <button className="bg-teal p-4 m-4 rounded-md hover:text-baby-blue font-uncial text-2xl" onClick={resetGame}>Try again?</button>
             </div> 
         : null}
-         <button className="bg-plum-web p-4 m-4 rounded-md hover:text-royal-gold hover:bg-dark-purple font-uncial text-2xl" onClick={returnToSelect} >Return to Character Select</button>
+         <div className="flex">
+            <button className="bg-wolf-grey text-college-navy p-4 m-4 rounded-md hover:text-white font-uncial text-2xl" onClick={returnToSelect} >Return to Character Select</button>
+            <button className="bg-action-green text-college-navy p-4 m-4 rounded-md hover:text-white font-uncial text-2xl" onClick={restartGame} >Restart Battle</button> 
+         </div>
         </>
     )
 }

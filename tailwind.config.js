@@ -8,9 +8,10 @@ module.exports = {
         'cardo':["'Cardo', 'sans'"]
       },
       colors: {
-        'dark-purple': '#2c1320',
-        'plum-web': '#f9b9f2',
-        'royal-gold': '#ffd700'
+        'college-navy': '#002a5c',
+        'action-green': '#7ac142',
+        'wolf-grey': '#b2b7bb',
+        'teal': '#2d5980'
       },
       height: {
         'quarter': '25vh',
